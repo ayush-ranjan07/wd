@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Array and Math Functions</title>
+</head>
+<body>
+<script>
+const myArray = [1, 2, 3, 4, 5];
+
+const arrayFunctions = {
+    concat: function(arr) {
+        return this.concat(arr);
+    },
+    every: function(callback) {
+        return this.every(callback);
+    },
+    filter: function(callback) {
+        return this.filter(callback);
+    },
+    find: function(callback) {
+        return this.find(callback);
+    },
+    indexOf: function(value) {
+        return this.indexOf(value);
+    },
+    join: function(separator) {
+        return this.join(separator);
+    },
+    map: function(callback) {
+        return this.map(callback);
+    },
+    pop: function() {
+        return this.pop();
+    },
+    push: function(...items) {
+        return this.push(...items);
+    },
+    reverse: function() {
+        return this.reverse();
+    },
+    shift: function() {
+        return this.shift();
+    },
+    slice: function(start, end) {
+        return this.slice(start, end);
+    },
+    sort: function(compareFunction) {
+        return this.sort(compareFunction);
+    },
+    splice: function(start, deleteCount, ...items) {
+        return this.splice(start, deleteCount, ...items);
+    },
+    unshift: function(...items) {
+        return this.unshift(...items);
+    },
+    toString: function() {
+        return this.toString();
+    }
+};
+
+const myNumber = 5;
+
+const mathFunctions = {
+    abs: function(num) {
+        return Math.abs(num);
+    },
+    ceil: function(num) {
+        return Math.ceil(num);
+    },
+    floor: function(num) {
+        return Math.floor(num);
+    },
+    max: function(...nums) {
+        return Math.max(...nums);
+    },
+    min: function(...nums) {
+        return Math.min(...nums);
+    },
+    pow: function(base, exponent) {
+        return Math.pow(base, exponent);
+    },
+    random: function() {
+        return Math.random();
+    },
+    round: function(num) {
+        return Math.round(num);
+    },
+    sqrt: function(num) {
+        return Math.sqrt(num);
+    }
+};
+
+console.log("Array concat:", arrayFunctions.concat([6, 7]));
+console.log("Array every:", arrayFunctions.every(x => x > 0));
+console.log("Array filter:", arrayFunctions.filter(x => x % 2 === 0));
+console.log("Array find:", arrayFunctions.find(x => x > 2));
+console.log("Array indexOf:", arrayFunctions.indexOf(3));
+console.log("Array join:", arrayFunctions.join('-'));
+console.log("Array map:", arrayFunctions.map(x => x * 2));
+console.log("Array pop:", arrayFunctions.pop());
+console.log("Array push:", arrayFunctions.push(6));
+console.log("Array reverse:", arrayFunctions.reverse());
+console.log("Array shift:", arrayFunctions.shift());
+console.log("Array slice:", arrayFunctions.slice(1, 3));
+console.log("Array sort:", arrayFunctions.sort());
+console.log("Array splice:", arrayFunctions.splice(1, 2));
+console.log("Array unshift:", arrayFunctions.unshift(0));
+console.log("Array toString:", arrayFunctions.toString());
+
+console.log("Math abs:", mathFunctions.abs(-5));
+console.log("Math ceil:", mathFunctions.ceil(4.3));
+console.log("Math floor:", mathFunctions.floor(4.7));
+console.log("Math max:", mathFunctions.max(1, 2, 3));
+console.log("Math min:", mathFunctions.min(1, 2, 3));
+console.log("Math pow:", mathFunctions.pow(2, 3));
+console.log("Math random:", mathFunctions.random());
+console.log("Math round:", mathFunctions.round(4.3));
+console.log("Math sqrt:", mathFunctions.sqrt(9));
+</script>
+</body>
+</html>

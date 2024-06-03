@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Calculator</title>
+    <link rel="shortcut icon" href="calculator-icon.png" type="image/x-icon">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="utils.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Ubuntu:wght@300&display=swap");
+
+
+html,
+body {
+  /* height: 100%;
+  width: 100%; */
+  font-family: "Roboto", sans-serif;
+  /* background-color: black; */
+  margin: 0;padding: 0;
+  transition: all 0.5s;
+}
+
+.dark-mode{
+  background-color: #1b1919;
+
+}
+
+
+
+.button {
+  width: 70px;
+  height: 70px;
+  padding: 5px;
+  margin: 0 4px;
+  border: none;
+  background-color: #2f2f2f;
+  color: white;
+  font-weight:bolder;
+  font-size: 30px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.button:hover{
+  background-color: #1b1919;
+  border-radius: 10px;
+}
+
+
+
+
+.top-btn{
+  width: 70px;
+  height: 70px;
+  padding: 5px;
+  margin: 0 4px;;
+  border: none;
+  background-color: #9a9a9a;
+  color: black;
+  font-weight:bolder;
+  font-size: 30px;
+  border-radius: 50px;
+  cursor: pointer;
+  
+}
+
+.top-btn:hover{
+  background-color: #575353;
+
+
+}
+
+.right-btn{
+  
+  width: 70px;
+  height: 70px;
+  padding: 5px;
+  margin: 0 4px;
+  border: none;
+  background-color: #ee9406;
+  color: white;
+  font-weight:bolder;
+  font-size: 30px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.right-btn:hover{
+  background-color: #bb7a11;
+
+
+}
+::placeholder{
+  color: white;
+}
+
+.row {
+  margin: 8px 0;
+}
+.row input {
+  
+  width: 316px;
+  font-size:200%;
+  font-weight:bolder;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  margin: 0;
+  padding: 10px 10px;
+  border: none;
+  text-align: right;
+  
+  /* border: 2px solid black; */
+  /* border-radius: 5px; */
+}
+h1{
+  color: rgb(0, 0, 0);
+  font-weight: bolder;
+}
+
+.container{
+  
+  background-color: black;
+  padding: 15px;
+  /* display: inline-block; */
+  position:absolute;
+  border: solid rgb(0, 0, 0) ;
+  border-radius: 20px;
+  /* margin-left: ; */
+  margin: 50px 450px;
+}
+
+
+
+@media only screen and (max-width: 1280px) {
+  .container {
+    margin: 50px 150px;
+
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .container {
+    margin: 50px 80px;
+
+  }
+}
+@media only screen and (max-width: 530px) {
+  .container {
+    margin: 50px 20px;
+
+  }
+}
+@media only screen and (max-width: 400px) {
+  .container {
+    margin: 50px 1px;
+
+  }
+}
+
+
+
+
+
+
+/* DARK MODE CSS */
+
+
+
+
+#dark{
+
+  width: 70px;
+  height: 70px;
+  padding: 5px;
+  margin: 10px 10px;
+  border: none;
+  /* background-color: #000000; */
+  /* background-image:url("/moon.svg") ; */
+
+  color: white;
+  font-weight:bolder;
+  font-size: 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.5s;
+  font-display: none;
+}
+
+
+#dark:hover{
+  /* background-color: #1b1919; */
+  border-radius: 10px;
+}
+
+.light_icon{
+  
+  /* background-color: #d6d6d6; */
+
+  background-image:url("moon.svg") ;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.dark_icon{
+  /* background-color: #535151; */
+
+    background-image:url("sun.svg") ;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+    </style>
+</head>
+
+<body onkeydown="myFunction(event)">
+    <div class="flex flex-col items-left">
+        <button id="dark" class="light_icon" onclick="dark(),darkiocn()"></button>
+        <!-- <button id="dark" onclick="dark()">Dark Mode</button> -->
+        <!-- <input type="color" name="color" id="color" value="#535151"> -->
+    </div>
+
+
+    <div class="container calc flex flex-col items-center ">
+        <h1 class="text-center" style="color: white;">Welcome to Calculator</h1>
+        <div class="row">
+            <input class="input" type="text" placeholder="0" readonly style="color: #1b1919;"/>
+            <!-- <input type="submit" value="calculate" hidden> -->
+        </div>
+        <div class="row">
+            <button class="button top-btn" onclick="clr()">AC</button>
+            <button class="button top-btn" onclick="back()">⬅️</button>
+            <button class="button top-btn" onclick="dis('%')">%</button>
+            <button class="button right-btn" onclick="dis('/')">÷</button>
+        </div>
+        <div class="row">
+            <button class="button" onclick="dis('7')">7</button>
+            <button class="button" onclick="dis('8')">8</button>
+            <button class="button" onclick="dis('9')">9</button>
+            <button class="button right-btn" onclick="dis('*')">X</button>
+        </div>
+        <div class="row">
+            <button class="button" onclick="dis('4')">4</button>
+            <button class="button" onclick="dis('5')">5</button>
+            <button class="button" onclick="dis('6')">6</button>
+            <button class="button right-btn" onclick="dis('-')">-</button>
+        </div>
+        <div class="row">
+            <button class="button" onclick="dis('1')">1</button>
+            <button class="button" onclick="dis('2')">2</button>
+            <button class="button" onclick="dis('3')">3</button>
+            <button class="button right-btn" onclick="dis('+')">+</button>
+        </div>
+        <div class="row">
+            <button class="button" onclick="dis('0')">0</button>
+            <button class="button" onclick="dis('00')">00</button>
+            <button class="button" onclick="dis('.')">.</button>
+            <button class="button right-btn" onclick="solve()">=</button>
+        </div>
+    </div>
+    <script>
+      function myFunction(event) {
+        if (
+          event.key == "0" ||
+          event.key == "1" ||
+          event.key == "2" ||
+          event.key == "3" ||
+          event.key == "4" ||
+          event.key == "5" ||
+          event.key == "6" ||
+          event.key == "7" ||
+          event.key == "8" ||
+          event.key == "9" ||
+          event.key == "+" ||
+          event.key == "-" ||
+          event.key == "*" ||
+          event.key == "/" ||
+          event.key == "%" ||
+          event.key == "."
+        ) {
+          document.querySelector("input").value += event.key;
+        } else if (event.key == "Backspace" || event.key == "Delete") {
+          back();
+        } else if (event.key == "Enter") {
+         solve();
+        }else if (event.key == "c") {
+          clr();
+         }
+         else if (event.key == "d") {
+          dark();
+         }
+      
+      }
+      function solve() {
+        let x = document.querySelector("input").value;
+        let y = eval(x);
+        if (y === undefined) {
+          y = "Invalid Expression";
+        }
+        document.querySelector("input").value = y;
+      } 
+      function clr() {
+        document.querySelector("input").value = "";}
+      
+      function back() {
+        let x = document.querySelector("input").value;
+        let y = x.slice(0, -1);
+        document.querySelector("input").value = y;}
+      
+      function dis(val) {
+        document.querySelector("input").value += val;
+      }
+      function dark() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+        document.getElementById("dark").classList.toggle("dark_icon");}
+      function darkicon() {
+        document.getElementById("dark").classList.remove("light_icon");
+        document.getElementById("dark").classList.add("dark_icon");}
+      
+      function color_change(){
+        let x = document.getElementById("color").value
+        document.getElementsByClassName("container").style.background = x}
+</script>
+</body>
+
+</html>

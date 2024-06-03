@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f7f7f7;
+        }
+
+        .form-container {
+            width: 400px;
+            margin: 50px auto;
+            padding: 30px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-heading {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 16px;
+        }
+
+        .gender-radio {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .gender-radio input {
+            margin-right: 10px;
+        }
+
+        .radio-label {
+            margin-right: 15px;
+        }
+
+        .dob-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .dob-input {
+            width: 30%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 16px;
+        }
+
+        .address-textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 16px;
+        }
+
+        .submit-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            width: 100%;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2 class="form-heading">User personal information</h2>
+        <form>
+            <div class="form-group">
+                <label for="fullName" class="form-label">Enter your full name</label>
+                <input type="text" class="form-input" id="fullName" name="fullName" required>
+            </div>
+            <div class="form-group">
+                <label for="email" class="form-label">Enter your email</label>
+                <input type="email" class="form-input" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password" class="form-label">Enter your password</label>
+                <input type="password" class="form-input" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword" class="form-label">Confirm your password</label>
+                <input type="password" class="form-input" id="confirmPassword" name="confirmPassword" required>
+            </div>
+            <div class="form-group gender-radio">
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male" class="
+                <label for="male" class="radio-label">Male</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female" class="radio-label">Female</label>
+                <input type="radio" id="others" name="gender" value="others">
+                <label for="others" class="radio-label">Others</label>
+            </div>
+            <div class="form-group dob-container">
+                <label for="dob">Enter your Date of Birth</label>
+                <input type="date" class="dob-input" id="dob" name="dob" required>
+            </div>
+            <div class="form-group">
+                <label for="address" class="form-label">Enter your address</label>
+                <textarea name="address" id="address" class="address-textarea" required></textarea>
+            </div>
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

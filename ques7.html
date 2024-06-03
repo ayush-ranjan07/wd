@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>String Position and Reverse Digits</title>
+    <script>
+
+        function findLeftmostVowel(str) {
+
+            str = str.toLowerCase();
+
+            var vowels = ['a', 'e', 'i', 'o', 'u'];
+
+            for (var i = 0; i < str.length; i++) {
+
+                if (vowels.indexOf(str[i]) !== -1) {
+                    return i + 1; // Adding 1 to convert index to position
+                }
+            }
+
+            return -1;
+        }
+
+        // Function to reverse the digits of a number
+        function reverseDigits(num) {
+            // Convert number to string to facilitate reversing
+            var numStr = num.toString();
+            // Reverse the string
+            var reversedNumStr = numStr.split('').reverse().join('');
+            // Convert the reversed string back to a number
+            var reversedNum = parseInt(reversedNumStr);
+            return reversedNum;
+        }
+
+        // Function to handle form submission
+        function processForm() {
+            var str = document.getElementById('inputString').value;
+            var num = parseInt(document.getElementById('inputNumber').value);
+
+            // Find leftmost vowel position
+            var vowelPosition = findLeftmostVowel(str);
+            // Reverse digits of the number
+            var reversedNumber = reverseDigits(num);
+
+            // Display the results
+            document.getElementById('result1').innerText = "Leftmost vowel position: " + vowelPosition;
+            document.getElementById('result2').innerText = "Reversed number: " + reversedNumber;
+        }
+    </script>
+</head>
+<body>
+
+<h2>Find Leftmost Vowel Position and Reverse Digits</h2>
+<form onsubmit="processForm(); return false;">
+    Enter a string: <input type="text" id="inputString" required><br><br>
+    Enter a number: <input type="number" id="inputNumber" required><br><br>
+    <input type="submit" value="Submit">
+</form>
+
+<div id="results">
+    <p id="result1"></p>
+    <p id="result2"></p>
+</div>
+
+</body>
+</html>

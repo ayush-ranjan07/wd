@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 7</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            transition: all 1s;
+        }
+    </style>
+    <script>
+        function moveBox() {
+            const box = document.getElementById('box');
+            box.style.top = Math.random() * window.innerHeight + 'px';
+            box.style.left = Math.random() * window.innerWidth + 'px';
+        }
+        setInterval(moveBox, 1000); // Move the box every second
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>
